@@ -1,0 +1,7 @@
+#pragma once
+
+#define TAPPING_TERM 250
+#define PERMISSIVE_HOLD
+#define CHORDAL_HOLD
+#define FLOW_TAP_TERM 150
+#define LAYER_LOCK_IDLE_TIMEOUT 30000
