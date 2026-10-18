@@ -1,5 +1,23 @@
 # QMK Userspace
 
+My QMK keymaps, built against upstream QMK. Every push builds the firmware with GitHub Actions and publishes the `.uf2` files to the [latest release](../../releases/tag/latest).
+
+| Keyboard | Build target | Keymap |
+| --- | --- | --- |
+| Ploopy Adept | `ploopyco/madromys/rev1_001` | [`keyboards/ploopyco/madromys/keymaps/oskarilindroos`](keyboards/ploopyco/madromys/keymaps/oskarilindroos) |
+| Beekeeb Piantor Pro | `beekeeb/piantor_pro` | [`keyboards/beekeeb/piantor_pro/keymaps/oskarilindroos`](keyboards/beekeeb/piantor_pro/keymaps/oskarilindroos) |
+
+## Ploopy Adept layout
+
+![Ploopy Adept layout](keyboards/ploopyco/madromys/keymaps/oskarilindroos/layout.png)
+
+* Left-handed is the default. Hold the Back button for 1s to switch hands; the choice is saved until the next flash.
+* Tap the right click button for right click, hold it and roll the ball to drag scroll.
+* Switch and Back send Alt instead of Cmd on Linux. Mission Control and App Exposé are macOS only.
+* To flash: hold the bottom-left button while plugging in, then copy the `.uf2` onto the `RPI-RP2` drive.
+
+## About this template
+
 This is a template repository which allows for an external set of QMK keymaps to be defined and compiled. This is useful for users who want to maintain their own keymaps without having to fork the [main QMK repository](https://github.com/qmk/qmk_firmware). You must still fork the main QMK repository if writing firmware for a *new* keyboard.
 
 ## Howto configure your build targets
