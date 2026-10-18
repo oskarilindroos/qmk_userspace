@@ -98,6 +98,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else if (timer_elapsed(hand_timer) >= HAND_SWITCH_HOLD_MS) {
                 // Long press only, saved to EEPROM so the hand survives unplugging
                 set_single_persistent_default_layer(keycode == HAND_LEFT ? LEFT : RIGHT);
+            } else if (timer_elapsed(hand_timer) < TAPPING_TERM) {
+                // Quick tap = Back
+                tap_code16(host_is_mac() ? LGUI(KC_LBRC) : LALT(KC_LEFT));
             }
             return false;
         }
