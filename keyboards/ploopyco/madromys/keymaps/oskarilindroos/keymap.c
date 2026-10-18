@@ -27,20 +27,21 @@ enum custom_keycodes {
 // ──────────────────────────────────────────────────────────────
 // Layers
 // ──────────────────────────────────────────────────────────────
+// LEFT comes first so it's the default after Bootmagic wipes EEPROM
 enum layer_names {
-    RIGHT,
     LEFT,
+    RIGHT,
 };
 
 // ──────────────────────────────────────────────────────────────
 // Keymaps
 // ──────────────────────────────────────────────────────────────
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    // Right‑handed layer
-    [RIGHT] = LAYOUT(M_EXPOSE, HAND_LEFT, M_SWITCH, DRAG_SCROLL, MS_BTN1, MS_BTN3),
-
     // Left‑handed layer
-    [LEFT] = LAYOUT(DRAG_SCROLL, M_SWITCH, HAND_RIGHT, M_EXPOSE, MS_BTN3, MS_BTN1)};
+    [LEFT] = LAYOUT(DRAG_SCROLL, M_SWITCH, HAND_RIGHT, M_EXPOSE, MS_BTN3, MS_BTN1),
+
+    // Right‑handed layer
+    [RIGHT] = LAYOUT(M_EXPOSE, HAND_LEFT, M_SWITCH, DRAG_SCROLL, MS_BTN1, MS_BTN3)};
 
 // ──────────────────────────────────────────────────────────────
 // Window switching: Cmd-Tab on macOS, Alt-Tab elsewhere. The
