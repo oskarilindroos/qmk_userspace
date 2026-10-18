@@ -64,6 +64,9 @@ static uint16_t scroll_timer = 0;
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
     if (scroll_held) {
         scroll_moved += abs(mouse_report.x) + abs(mouse_report.y);
+        // Ploopy maps x straight to horizontal scroll, which runs opposite
+        // to its vertical scroll. Flip it so both axes follow the ball.
+        mouse_report.x = -mouse_report.x;
     }
     return mouse_report;
 }
